@@ -1,0 +1,62 @@
+.chat-notification {
+	position: relative;
+}
+
+.chat-notification::after {
+	content: '';
+	position: absolute;
+	top: 20px; /* Adjusts the vertical position of the tail */
+	left: -10px; /* Adjusts the position of the tail to the left of the box */
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-right: 10px solid white; /* Same color as the chat box background */
+}
+
+/* Smooth hover effect on the button */
+.hover-jump {
+	transition: transform 0.2s ease-in-out;
+}
+
+.hover-jump:hover {
+	transform: scale(0.9); /* Shrinks the button slightly */
+}
+
+.hover-jump:active {
+	transform: scale(1.1); /* Slight increase in size when clicked */
+}
+
+/* Style for the percentage chart containers */
+.progress-bar {
+	width: 100%;
+	height: 8px;
+	background-color: #e0e0e0;
+	border-radius: 5px;
+	overflow: hidden;
+	margin-top: 5px;
+	position: relative;
+}
+
+.progress-fill {
+	height: 100%;
+	border-radius: 5px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.web-dev {
+	width: 80%; /* Web Development progress */
+	background-color: #ffd15c;
+}
+
+.optimization {
+	width: 93%; /* Website Optimization progress */
+	background-color: #44d7b5;
+}
+
+.backend {
+	width: 43%; /* Backend progress */
+	background-color: #6c6ce4;
+}

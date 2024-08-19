@@ -1,0 +1,27 @@
+@import url(https://fonts.googleapis.com/css?family=Balsamiq+Sans:regular,italic,700,700italic);
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+	font-family: 'Balsamiq Sans', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+	width: 16px;
+}
+
+::-webkit-scrollbar-track {
+	background: #f9f7fc;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #ff4d60;
+	border-radius: 10px;
+	border: 2px solid #f9f7fc;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #ff3345; /* Slightly darker shade on hover */
+}
