@@ -33,6 +33,7 @@ const App: React.FC = () => {
 				<main className='w-[90%] ml-auto p-10 h-full overflow-y-auto outline-none'>
 					<About />
 					<Info />
+					Hello
 				</main>
 			</div>
 		</div>

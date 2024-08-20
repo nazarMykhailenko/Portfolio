@@ -16,6 +16,9 @@ export enum TranslationKeys {
 	WEB_DEVELOPMENT = 'web_development',
 	WEB_OPTIMIZATION = 'web_optimization',
 	BACKEND = 'BACKEND',
+	FINISHED_PROJECTS = 'finished_projects',
+	HAPPY_CLIENTS = 'happy_clients',
+	CUPS_OF_COFFEE = 'cups_of_coffee',
 }
 
 const resources = {
@@ -31,6 +34,9 @@ const resources = {
 			[TranslationKeys.WEB_DEVELOPMENT]: 'Web Development',
 			[TranslationKeys.WEB_OPTIMIZATION]: 'Web Optimization',
 			[TranslationKeys.BACKEND]: 'Back-end',
+			[TranslationKeys.FINISHED_PROJECTS]: 'Finished projects',
+			[TranslationKeys.HAPPY_CLIENTS]: 'Happy clients',
+			[TranslationKeys.CUPS_OF_COFFEE]: 'Cups of coffee drunk',
 		},
 	},
 	[LanguageCodes.RU]: {
@@ -45,6 +51,9 @@ const resources = {
 			[TranslationKeys.WEB_DEVELOPMENT]: 'Веб Pазработка',
 			[TranslationKeys.WEB_OPTIMIZATION]: 'Оптимизация Сайтов',
 			[TranslationKeys.BACKEND]: 'Back-end',
+			[TranslationKeys.FINISHED_PROJECTS]: 'Завершенных проектов',
+			[TranslationKeys.HAPPY_CLIENTS]: 'Довольных клиентов',
+			[TranslationKeys.CUPS_OF_COFFEE]: 'Выпитых чашек кофе',
 		},
 	},
 }
