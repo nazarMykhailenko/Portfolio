@@ -12,11 +12,14 @@ import { TranslationKeys } from '../../i18n'
 import { useTranslation } from 'react-i18next'
 import my_img from '../../assets/my_img.jpg'
 
-export const About: React.FC = () => {
+export const About = React.forwardRef<HTMLDivElement>((_, ref) => {
 	const { t } = useTranslation()
 
 	return (
-		<div className='w-full h-screen flex flex-col justify-center items-center relative overflow-hidden'>
+		<div
+			ref={ref}
+			className='w-full h-screen flex flex-col justify-center items-center relative overflow-hidden'
+		>
 			{/* Custom Elements evenly distributed away from edges and center */}
 			{/* Top section elements */}
 			<div className='absolute top-10 left-20 rotate-12'>
@@ -93,4 +96,4 @@ export const About: React.FC = () => {
 			</div>
 		</div>
 	)
-}
+})

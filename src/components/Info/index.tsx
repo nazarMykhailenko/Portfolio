@@ -4,16 +4,16 @@ import { useTranslation } from 'react-i18next'
 import { TranslationKeys } from '../../i18n'
 import './styles.css'
 
-export const Info: React.FC = () => {
+export const Info = React.forwardRef<HTMLDivElement>((_, ref) => {
 	const { t } = useTranslation()
 
 	return (
-		<div className='mb-32'>
+		<div className='mb-32' ref={ref}>
 			<h1 className='text-3xl text-center font-bold mb-10'>
 				{t(TranslationKeys.ABOUT_ME)}
 			</h1>
 
-			<div className='mb-14 bg-white w-[70%] px-10 py-8 rounded-lg shadow-lg mt-4 mx-auto chat-notification flex gap-10'>
+			<div className='mb-14 bg-white w-[80%] px-10 py-8 rounded-lg shadow-lg mt-4 mx-auto chat-notification flex gap-10'>
 				<div className='w-1/2 flex flex-col justify-between'>
 					{/* Top content */}
 					<div>
@@ -56,7 +56,7 @@ export const Info: React.FC = () => {
 				</div>
 			</div>
 
-			<div className='w-[70%] mx-auto'>
+			<div className='w-[80%] mx-auto'>
 				<div className='flex gap-8 justify-between'>
 					{/* First container */}
 					<div>
@@ -100,4 +100,4 @@ export const Info: React.FC = () => {
 			</div>
 		</div>
 	)
-}
+})

@@ -8,7 +8,19 @@ import {
 	Code,
 } from 'lucide-react'
 
-export const Sidebar: React.FC = () => {
+interface ISidebarProps {
+	handleScrollTo: (ref: React.RefObject<HTMLDivElement>) => void
+	aboutRef: React.RefObject<HTMLDivElement>
+	infoRef: React.RefObject<HTMLDivElement>
+	servicesRef: React.RefObject<HTMLDivElement>
+}
+
+export const Sidebar: React.FC<ISidebarProps> = ({
+	handleScrollTo,
+	aboutRef,
+	infoRef,
+	servicesRef,
+}) => {
 	return (
 		<aside className='fixed top-0 left-0 w-[10%] h-screen text-white px-10 py-12 flex flex-col items-center border-r border-gray-300 gap-20'>
 			<div className='cursor-pointer'>
@@ -22,6 +34,10 @@ export const Sidebar: React.FC = () => {
 						<a
 							href='#about'
 							className='text-black hover:text-[#ff4d60] transition-transform duration-300 transform hover:scale-125'
+							onClick={(e) => {
+								e.stopPropagation()
+								handleScrollTo(aboutRef)
+							}}
 						>
 							<House size={30} />
 						</a>
@@ -30,6 +46,10 @@ export const Sidebar: React.FC = () => {
 						<a
 							href='#projects'
 							className='text-black hover:text-[#ff4d60] transition-transform duration-300 transform hover:scale-125'
+							onClick={(e) => {
+								e.stopPropagation()
+								handleScrollTo(infoRef)
+							}}
 						>
 							<UserRound size={30} />
 						</a>
@@ -38,6 +58,10 @@ export const Sidebar: React.FC = () => {
 						<a
 							href='#contact'
 							className='text-black hover:text-[#ff4d60] transition-transform duration-300 transform hover:scale-125'
+							onClick={(e) => {
+								e.stopPropagation()
+								handleScrollTo(servicesRef)
+							}}
 						>
 							<Wrench size={30} />
 						</a>
