@@ -25,11 +25,16 @@ export const Sidebar: React.FC<ISidebarProps> = ({
 }) => {
 	return (
 		<aside className='fixed top-0 left-0 w-[10%] h-screen text-white px-10 py-12 flex flex-col items-center border-r border-gray-300 gap-20'>
+			{/* Logo Section with Smooth Bounce Animation */}
 			<div className='cursor-pointer'>
-				<Code size={60} color={'#ff4d60'} />
+				<Code
+					size={60}
+					color={'#ff4d60'}
+					className='smooth-bounce transition-all duration-300'
+				/>
 			</div>
 
-			{/* Nav with flex-grow */}
+			{/* Navigation Section */}
 			<nav className='flex-grow'>
 				<ul className='space-y-10'>
 					<li>
@@ -41,7 +46,10 @@ export const Sidebar: React.FC<ISidebarProps> = ({
 								handleScrollTo(aboutRef)
 							}}
 						>
-							<House size={30} />
+							<House
+								size={30}
+								className='transition-transform hover:animate-pulse hover:scale-110'
+							/>
 						</a>
 					</li>
 					<li>
@@ -53,7 +61,10 @@ export const Sidebar: React.FC<ISidebarProps> = ({
 								handleScrollTo(infoRef)
 							}}
 						>
-							<UserRound size={30} />
+							<UserRound
+								size={30}
+								className='transition-transform hover:animate-pulse hover:scale-110'
+							/>
 						</a>
 					</li>
 					<li>
@@ -65,7 +76,10 @@ export const Sidebar: React.FC<ISidebarProps> = ({
 								handleScrollTo(servicesRef)
 							}}
 						>
-							<Wrench size={30} />
+							<Wrench
+								size={30}
+								className='transition-transform hover:animate-pulse hover:scale-110'
+							/>
 						</a>
 					</li>
 					<li>
@@ -77,7 +91,10 @@ export const Sidebar: React.FC<ISidebarProps> = ({
 								handleScrollTo(experienceRef)
 							}}
 						>
-							<BriefcaseBusiness size={30} />
+							<BriefcaseBusiness
+								size={30}
+								className='transition-transform hover:animate-pulse hover:scale-110'
+							/>
 						</a>
 					</li>
 					<li>
@@ -85,12 +102,16 @@ export const Sidebar: React.FC<ISidebarProps> = ({
 							href='#'
 							className='text-black hover:text-[#ff4d60] transition-transform duration-300 transform hover:scale-125'
 						>
-							<Layers size={30} />
+							<Layers
+								size={30}
+								className='transition-transform hover:animate-pulse hover:scale-110'
+							/>
 						</a>
 					</li>
 				</ul>
 			</nav>
 
+			{/* Footer Section */}
 			<div>
 				<p className='text-gray-400 transform -rotate-90'>&copy; 2024</p>
 			</div>
