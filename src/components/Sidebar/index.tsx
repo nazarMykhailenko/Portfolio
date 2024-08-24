@@ -13,6 +13,7 @@ interface ISidebarProps {
 	aboutRef: React.RefObject<HTMLDivElement>
 	infoRef: React.RefObject<HTMLDivElement>
 	servicesRef: React.RefObject<HTMLDivElement>
+	experienceRef: React.RefObject<HTMLDivElement>
 }
 
 export const Sidebar: React.FC<ISidebarProps> = ({
@@ -20,6 +21,7 @@ export const Sidebar: React.FC<ISidebarProps> = ({
 	aboutRef,
 	infoRef,
 	servicesRef,
+	experienceRef,
 }) => {
 	return (
 		<aside className='fixed top-0 left-0 w-[10%] h-screen text-white px-10 py-12 flex flex-col items-center border-r border-gray-300 gap-20'>
@@ -68,8 +70,12 @@ export const Sidebar: React.FC<ISidebarProps> = ({
 					</li>
 					<li>
 						<a
-							href='#'
+							href='#experience'
 							className='text-black hover:text-[#ff4d60] transition-transform duration-300 transform hover:scale-125'
+							onClick={(e) => {
+								e.stopPropagation()
+								handleScrollTo(experienceRef)
+							}}
 						>
 							<BriefcaseBusiness size={30} />
 						</a>

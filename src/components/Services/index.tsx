@@ -16,7 +16,6 @@ export const Services = React.forwardRef<HTMLDivElement>((_, ref) => {
 
 			<div className='w-[80%] mx-auto'>
 				<div className='flex gap-8 justify-between text-white text-center'>
-					{/* Card 1: Web Development */}
 					<div className='w-1/3 bg-[#6c6ce4] px-6 py-8 rounded-lg shadow-lg shadow-[#6c6ce4]/50 transform transition-transform hover:-translate-y-2 duration-300'>
 						<div className='flex justify-center mb-4'>
 							<img className='w-16 object-cover' src={code} alt='code' />
@@ -24,10 +23,9 @@ export const Services = React.forwardRef<HTMLDivElement>((_, ref) => {
 						<h2 className='text-xl font-bold mb-4'>
 							{t(TranslationKeys.WEB_DEVELOPMENT)}
 						</h2>
-						<p>React, JavaScript, Python, HTML, NextJS, Vite, CSS, SCSS.</p>
+						<p>React, JavaScript, Python, HTML, NextJS, Vite, CSS, SCSS</p>
 					</div>
 
-					{/* Card 2: Web Optimization */}
 					<div className='w-1/3 bg-[#f9d74b] px-6 py-8 rounded-lg shadow-lg shadow-[#f9d74b]/50 transform transition-transform hover:-translate-y-2 duration-300'>
 						<div className='flex justify-center mb-4'>
 							<img
@@ -42,7 +40,6 @@ export const Services = React.forwardRef<HTMLDivElement>((_, ref) => {
 						<p>VS Code, WebStorm, Figma</p>
 					</div>
 
-					{/* Card 3: Backend Development */}
 					<div className='w-1/3 bg-[#f97b8b] px-6 py-8 rounded-lg shadow-lg shadow-[#f97b8b]/50 transform transition-transform hover:-translate-y-2 duration-300'>
 						<div className='flex justify-center mb-4'>
 							<img className='w-16 object-cover' src={backend} alt='backend' />
