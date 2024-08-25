@@ -33,6 +33,8 @@ export enum TranslationKeys {
 	FIRST_EXPERIENCE_TEXT = 'first_experience_text',
 	COMMERCIAL_EXPERIENCE = 'commercial_experience',
 	COMMERCIAL_EXPERIENCE_TEXT = 'commercial_experience_text',
+	ALL = 'all',
+	PROJECTS = 'projects',
 }
 
 const resources = {
@@ -70,6 +72,8 @@ const resources = {
 			[TranslationKeys.COMMERCIAL_EXPERIENCE]: 'Commercial experience',
 			[TranslationKeys.COMMERCIAL_EXPERIENCE_TEXT]:
 				'I began freelancing in commercial development, working on three key projects: an app for business owners, a CRM platform, and an inventory monitoring system. These experiences allowed me to further develop my web development skills and optimize business solutions',
+			[TranslationKeys.ALL]: 'All',
+			[TranslationKeys.PROJECTS]: 'Projects',
 		},
 	},
 	[LanguageCodes.RU]: {
@@ -106,6 +110,8 @@ const resources = {
 			[TranslationKeys.COMMERCIAL_EXPERIENCE]: 'Коммерческий опыт',
 			[TranslationKeys.COMMERCIAL_EXPERIENCE_TEXT]:
 				'Начал заниматься коммерческой разработкой на фрилансе, работая над тремя проектами: приложением для владельцев бизнеса, CRM-платформой и системой мониторинга товарных запасов. Эти проекты помогли мне развить навыки веб-разработки и оптимизации бизнес-решений',
+			[TranslationKeys.ALL]: 'Все',
+			[TranslationKeys.PROJECTS]: 'Проекты',
 		},
 	},
 }

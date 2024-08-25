@@ -1,0 +1,156 @@
+/* Adjusted card size */
+.card {
+	position: relative;
+	overflow: hidden;
+	border-radius: 10px;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+	transition: 0.3s;
+	width: 100%;
+	height: auto;
+}
+
+/* Larger thumbnail with a consistent aspect ratio */
+.thumbnail {
+	position: relative;
+	width: 100%;
+	height: 250px;
+	overflow: hidden;
+}
+
+/* Ensure images fit properly inside the larger thumbnail */
+.image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.3s ease-in-out;
+}
+
+.image:hover {
+	transform: scale(1.1);
+}
+
+/* Mask for hover effect */
+.mask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: #6c6ce5;
+	transition: 0.3s;
+	opacity: 0;
+}
+
+.card:hover .mask {
+	opacity: 0.95;
+}
+
+/* Category text (Red background) */
+.category {
+	position: absolute;
+	display: inline-block;
+	left: 1.5rem;
+	top: 0;
+	font-size: 1rem; /* Keep category font size as is */
+	color: #ffffff;
+	padding: 0.25rem 0.75rem;
+	background-color: #ff4b61;
+	border-bottom-left-radius: 0.98rem;
+	border-bottom-right-radius: 0.98rem;
+	transform: translateY(-40px);
+	transition: opacity 0.3s, transform 0.3s;
+	opacity: 0; /* Initially hidden */
+}
+
+/* Title text (White background) */
+.title {
+	position: absolute;
+	top: 4rem;
+	color: #ffffff;
+	font-size: 1rem; /* Reduced font size for the title (smaller white text) */
+	padding: 0 1.25rem;
+	margin: 0 0 1rem;
+	transform: translateY(30px);
+	transition: opacity 0.3s, transform 0.3s;
+	opacity: 0; /* Initially hidden */
+}
+
+/* Display text on hover */
+.card:hover .category,
+.card:hover .title {
+	opacity: 1; /* Make the text visible */
+	transform: translateY(0); /* Move the text into position */
+}
+
+/* Links section */
+.links {
+	display: flex;
+	flex-direction: row;
+	gap: 1.5rem;
+	transition: opacity 0.3s;
+	opacity: 0;
+}
+
+.card:hover .links {
+	opacity: 1;
+}
+
+/* Links styling */
+.site,
+.github {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	bottom: 1.5rem;
+	color: #ffffff;
+	font-size: 1.25rem;
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+}
+
+.site {
+	left: 1.5rem;
+	background-color: #ffd15c;
+}
+
+.github {
+	right: 1.5rem;
+	background-color: #af6ffd;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+	.container {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 2rem;
+	}
+
+	.thumbnail {
+		height: 220px;
+	}
+}
+
+@media (max-width: 768px) {
+	.container {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.5rem;
+	}
+
+	.thumbnail {
+		height: 200px;
+	}
+}
+
+@media (max-width: 640px) {
+	.container {
+		grid-template-columns: 1fr;
+	}
+
+	.thumbnail {
+		height: 180px;
+	}
+}

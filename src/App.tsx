@@ -6,6 +6,7 @@ import { Info } from './components/Info'
 import { Services } from './components/Services'
 import './App.css'
 import { Experience } from './components/Experience'
+import { Projects } from './components/Projects'
 
 const App: React.FC = () => {
 	const [language, setLanguage] = useState('EN')
@@ -21,6 +22,7 @@ const App: React.FC = () => {
 	const infoRef = React.useRef(null)
 	const servicesRef = React.useRef(null)
 	const experienceRef = React.useRef(null)
+	const projectRef = React.useRef(null)
 
 	const handleScrollTo = (ref: React.RefObject<HTMLDivElement>) => {
 		if (!ref.current) return
@@ -47,12 +49,14 @@ const App: React.FC = () => {
 					infoRef={infoRef}
 					servicesRef={servicesRef}
 					experienceRef={experienceRef}
+					projectRef={projectRef}
 				/>
 				<main className='w-[90%] ml-auto p-10 h-full overflow-y-auto outline-none'>
 					<About ref={aboutRef} />
 					<Info ref={infoRef} />
 					<Services ref={servicesRef} />
 					<Experience ref={experienceRef} />
+					<Projects ref={projectRef} />
 				</main>
 			</div>
 		</div>
