@@ -7,6 +7,7 @@
 	margin: 0 auto;
 }
 
+/* Title styling */
 .title {
 	position: relative;
 	font-size: 2.5rem;
@@ -21,32 +22,47 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 1.875rem;
+	justify-content: center; /* Center the grid */
+	margin: 0px auto;
 }
 
+/* Filters section */
 .filters {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
-	column-gap: 1.875rem;
+	column-gap: 2.5rem; /* Increased gap between filter items */
 	margin-bottom: 2.5rem;
 }
 
+/* Each filter item */
 .item {
 	cursor: pointer;
 	font-weight: 700;
-	transition: 0.1s;
+	font-size: 1.25rem; /* Slightly larger font size for filter items */
+	transition: 0.2s;
 }
 
 .item:hover {
-	color: #ff4b61; /* Assuming $main is #ff4b61 */
+	color: #ff4b61;
 }
 
+/* Media Queries for Responsiveness */
 @media (max-width: 1024px) {
 	.container {
-		grid-template-columns: repeat(2, 330px);
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.5rem;
 		justify-content: center;
 		row-gap: 1.875rem;
+	}
+
+	.title {
+		font-size: 2.3rem; /* Slightly smaller title for medium screens */
+	}
+
+	.item {
+		font-size: 1.15rem; /* Slightly smaller filter items, but still readable */
 	}
 }
 
@@ -54,20 +70,87 @@
 	.filters {
 		justify-content: center;
 	}
+
+	.container {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.5rem;
+		max-width: 650px; /* Maintain max width for two-column layout */
+	}
+
+	.title {
+		font-size: 2rem;
+	}
+
+	.item {
+		font-size: 1.1rem; /* Keep the font size consistent for small screens */
+		column-gap: 2rem;
+	}
 }
 
-@media (max-width: 640px) {
+/* Adjust for screens between 625px and 480px */
+@media (max-width: 625px) {
 	.container {
-		grid-template-columns: 330px;
+		grid-template-columns: 1fr; /* One item per row */
+		max-width: 500px; /* Limit width so it doesn't take full screen */
+		margin: 0 auto; /* Center the container */
+		gap: 1.5rem;
 	}
 
 	.filters {
 		row-gap: 0.25rem;
+		justify-content: center;
+	}
+
+	.item {
+		font-size: 1.05rem;
+	}
+
+	.title {
+		font-size: 1.8rem;
+		margin-bottom: 2.5rem;
 	}
 }
 
+/* Full width layout for smaller screens (480px and below) */
 @media (max-width: 480px) {
+	.wrapper {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
 	.container {
 		grid-template-columns: 1fr;
+		gap: 1.25rem;
+		max-width: 400px; /* Limit the max width to 400px for smaller screens */
+		margin: 0 auto;
+	}
+
+	.filters {
+		column-gap: 1.5rem;
+	}
+
+	.item {
+		font-size: 1rem; /* Ensure the text is still readable on very small screens */
+	}
+
+	.title {
+		font-size: 1.7rem;
+		margin-bottom: 2rem;
+	}
+}
+
+@media (max-width: 360px) {
+	.container {
+		grid-template-columns: 1fr; /* Maintain single-column layout */
+		gap: 1rem;
+	}
+
+	.wrapper {
+		padding-left: 8px;
+		padding-right: 8px; /* Reduce padding on the smallest screens */
+	}
+
+	.title {
+		font-size: 1.6rem; /* Adjust title size for extra small screens */
 	}
 }
