@@ -35,7 +35,11 @@ export const Projects = React.forwardRef<HTMLDivElement>((_, ref) => {
 	}
 
 	return (
-		<section className={styles.wrapper} id='projects' ref={ref}>
+		<section
+			className={`${styles.wrapper} mb-16 sm:mb-20 md:mb-24 lg:mb-28 xl:mb-32`}
+			id='projects'
+			ref={ref}
+		>
 			<h2 className={styles.title}>{t(TranslationKeys.PROJECTS)}</h2>
 			<div className={styles.filters}>
 				<span className={styles.item} onClick={() => setItems(projects)}>

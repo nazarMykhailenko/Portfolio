@@ -33,3 +33,39 @@
 .hover:animate-bounce {
 	animation: bounce 2s infinite;
 }
+
+/* Sidebar-specific styles for responsiveness */
+@media (min-width: 1200px) {
+	/* On large screens, sidebar should always be visible */
+	.sidebar {
+		width: 10%;
+	}
+}
+
+/* Burger button to show on smaller screens */
+.burger-button {
+	position: fixed;
+	top: 1rem;
+	left: 1rem;
+	z-index: 50;
+}
+
+/* Transition for smooth sidebar animation */
+aside {
+	transition: transform 0.3s ease;
+}
+
+/* Thin scrollbar for sidebar */
+.sidebar {
+	scrollbar-width: thin;
+	scrollbar-color: #ff4d60 #f9f7fc;
+}
+
+.sidebar::-webkit-scrollbar {
+	width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+	background-color: #ff4d60;
+	border-radius: 10px;
+}

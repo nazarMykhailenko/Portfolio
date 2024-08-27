@@ -1,16 +1,18 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { TranslationKeys } from './i18n'
 import { Sidebar } from './components/Sidebar'
 import { About } from './components/About'
 import { Info } from './components/Info'
 import { Services } from './components/Services'
-import './App.css'
 import { Experience } from './components/Experience'
 import { Projects } from './components/Projects'
+import emoji from './assets/emoji-wink-svgrepo-com.svg'
+import './App.css'
 
 const App: React.FC = () => {
 	const [language, setLanguage] = useState('EN')
-	const { i18n } = useTranslation()
+	const { i18n, t } = useTranslation()
 
 	const toggleLanguage = () => {
 		const newLanguage = language === 'EN' ? 'RU' : 'EN'
@@ -51,12 +53,23 @@ const App: React.FC = () => {
 					experienceRef={experienceRef}
 					projectRef={projectRef}
 				/>
-				<main className='w-[90%] ml-auto p-10 h-full overflow-y-auto outline-none'>
+				<main className='xl:w-[90%] xl:ml-auto h-full overflow-y-auto outline-none'>
 					<About ref={aboutRef} />
 					<Info ref={infoRef} />
 					<Services ref={servicesRef} />
 					<Experience ref={experienceRef} />
 					<Projects ref={projectRef} />
+
+					<h1 className='text-xl md:text-2xl lg:text-3xl font-bold mb-6 text-gray-800 flex items-center gap-3 justify-center px-4'>
+						<div>{t(TranslationKeys.THANKS)}</div>
+						<div>
+							<img
+								className='w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10'
+								src={emoji}
+								alt='emoji'
+							/>
+						</div>
+					</h1>
 				</main>
 			</div>
 		</div>
