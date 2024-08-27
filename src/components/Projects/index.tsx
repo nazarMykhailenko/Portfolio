@@ -8,8 +8,7 @@ import styles from './Project.module.css'
 interface MenuItems {
 	id: number
 	title: { en: string; ru: string }
-	image: string
-	category: string
+	category: { en: string; ru: string }
 	linkSite: string
 	linkGitHub: string
 }
@@ -20,7 +19,7 @@ export const Projects = React.forwardRef<HTMLDivElement>((_, ref) => {
 
 	const filterItem = (categoryItem: string) => {
 		const updatedItems = projects.filter((elem) => {
-			return elem.category === categoryItem
+			return elem.category.en === categoryItem
 		})
 
 		setItems(updatedItems)
@@ -61,9 +60,9 @@ export const Projects = React.forwardRef<HTMLDivElement>((_, ref) => {
 				{items.map((item) => {
 					return (
 						<Card
+							id={item.id}
 							key={item.id}
 							title={getTitle(item)}
-							image={item.image}
 							category={item.category}
 							linkSite={item.linkSite}
 							linkGitHub={item.linkGitHub}

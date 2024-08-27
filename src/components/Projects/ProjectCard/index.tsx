@@ -1,31 +1,39 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { Link, Github } from 'lucide-react'
+import './styles.css'
 
 import styles from './Card.module.css'
 
 interface CardProps {
 	title: string
-	image: string
-	category: string
+	category: { en: string; ru: string }
 	linkSite: string
 	linkGitHub: string
+	id: number
 }
 
 export const Card: React.FC<CardProps> = ({
 	title,
-	image,
 	category,
 	linkSite,
 	linkGitHub,
+	id,
 }) => {
-	console.log(image)
+	const { i18n } = useTranslation()
+
+	const currentLanguage = i18n.language as 'en' | 'ru'
+
+	console.log(category[currentLanguage])
+
 	return (
-		<div className={styles.card}>
+		<div className={`${styles.card} card_${id}`}>
 			<div className={styles.thumbnail}>
-				<img className={styles.image} src={image} alt={title} />
 				<div className={styles.mask} />
 			</div>
-			<span className={styles.category}>{category}</span>
+			<span className={styles.category}>
+				{category[currentLanguage] || category.en}
+			</span>
 			<h3 className={styles.title}>{title}</h3>
 			<div className={styles.links}>
 				{linkSite ? (

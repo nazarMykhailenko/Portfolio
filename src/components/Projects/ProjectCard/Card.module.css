@@ -37,6 +37,7 @@
 	height: 100%;
 	width: 100%;
 	background: #6c6ce5;
+	z-index: 5;
 	transition: 0.3s;
 	opacity: 0;
 }
@@ -48,6 +49,7 @@
 /* Category text (Red background) */
 .category {
 	position: absolute;
+	z-index: 6;
 	display: inline-block;
 	left: 1.5rem;
 	top: 0;
@@ -65,6 +67,7 @@
 /* Title text (White background) */
 .title {
 	position: absolute;
+	z-index: 6;
 	top: 4rem;
 	color: #ffffff;
 	font-size: 1rem; /* Reduced font size for the title (smaller white text) */
@@ -87,7 +90,6 @@
 	display: flex;
 	flex-direction: row;
 	gap: 1.5rem;
-	transition: opacity 0.3s;
 	opacity: 0;
 }
 
@@ -110,6 +112,7 @@
 	border-radius: 50%;
 	text-align: center;
 	line-height: 42px;
+	z-index: 6;
 }
 
 .site {
